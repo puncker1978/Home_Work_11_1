@@ -11,16 +11,21 @@ namespace Home_Work_11_1
     abstract class Employee: Person
 
     {
+        #region Поля
         /// <summary>
         /// Должность
         /// </summary>
         private string position;
+        #endregion
 
+        #region Свойства
         /// <summary>
         /// Должность
         /// </summary>
         internal string Position { get => position; set => position = value; }
+        #endregion
 
+        #region Конструкторы
         /// <summary>
         /// Конструктор для инициализации сотрудника
         /// </summary>
@@ -28,14 +33,16 @@ namespace Home_Work_11_1
         /// <param name="secondName">Фамилия</param>
         /// <param name="thirdName">Отчество</param>
         /// <param name="position">Должность</param>
-        internal Employee(string firstName,
+        protected Employee(string firstName,
             string secondName,
             string thirdName,
             string position): base(firstName, secondName, thirdName)    
         {
             this.Position = position;
         }
+        #endregion
 
+        #region Методы
         public override string ToString()
         {
             return $"Фамилия: {this.SecondName}\n" +
@@ -44,6 +51,7 @@ namespace Home_Work_11_1
                 $"Должность: {this.Position}";
         }
 
-
+        internal abstract void EditClientInformation(Client client, Client newClient);
+        #endregion
     }
 }

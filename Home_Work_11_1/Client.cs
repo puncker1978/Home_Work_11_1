@@ -36,17 +36,17 @@ namespace Home_Work_11_1
         /// <summary>
         /// Номер телефона
         /// </summary>
-        protected string PhoneNumber { get => phoneNumber; set => phoneNumber = value; }
+        internal string PhoneNumber { get => phoneNumber; set => phoneNumber = value; }
 
         /// <summary>
         /// Серия паспорта
         /// </summary>
-        protected string PassportSeries { get => passportSeries; set => passportSeries = value; }
+        internal string PassportSeries { get => passportSeries; set => passportSeries = value; }
 
         /// <summary>
         /// Номер паспорта
         /// </summary>
-        protected string PassportNumber { get => passportNumber; set => passportNumber = value; }
+        internal string PassportNumber { get => passportNumber; set => passportNumber = value; }
         #endregion
 
         #region Конструктор

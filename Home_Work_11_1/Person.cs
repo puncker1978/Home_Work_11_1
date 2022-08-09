@@ -57,6 +57,10 @@ namespace Home_Work_11_1
             this.SecondName = secondName;
             this.ThirdName = thirdName;
         }
+
+        #endregion
+
+        #region Методы
         #endregion
     }
 }
