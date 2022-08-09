@@ -36,17 +36,17 @@ namespace Home_Work_11_1
         /// <summary>
         /// Номер телефона
         /// </summary>
-        internal string PhoneNumber { get => phoneNumber; set => phoneNumber = value; }
+        protected string PhoneNumber { get => phoneNumber; set => phoneNumber = value; }
 
         /// <summary>
         /// Серия паспорта
         /// </summary>
-        internal string PassportSeries { get => passportSeries; set => passportSeries = value; }
+        protected string PassportSeries { get => passportSeries; set => passportSeries = value; }
 
         /// <summary>
         /// Номер паспорта
         /// </summary>
-        internal string PassportNumber { get => passportNumber; set => passportNumber = value; }
+        protected string PassportNumber { get => passportNumber; set => passportNumber = value; }
         #endregion
 
         #region Конструктор
@@ -81,6 +81,24 @@ namespace Home_Work_11_1
                 $"Номер телефона: {this.PhoneNumber}\n" +
                 $"Серия паспорта: {this.PassportSeries}\n" +
                 $"Номер паспорта: {this.PassportNumber}";
+        }
+
+        internal string ViewedBy(Employee employee)
+        {
+            string str = $"Фамилия: {this.SecondName}\n" +
+                    $"Имя: {this.FirstName}\n" +
+                    $"Отчество: {this.ThirdName}\n" +
+                    $"Номер телефона: {this.PhoneNumber}\n";
+            if (employee.Position.Trim().ToLower() == "консультант")
+            {
+                str += $"Серия паспорта: ******\n" +
+                    $"Номер паспорта: ****";
+            }
+            else
+            {
+
+            }
+            return str;
         }
         #endregion
     }

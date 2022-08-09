@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Home_Work_11_1
 {
-    internal class Employee: Person
+    abstract class Employee: Person
 
     {
         /// <summary>
@@ -15,7 +15,7 @@ namespace Home_Work_11_1
         /// <summary>
         /// Должность
         /// </summary>
-        protected string Position { get => position; set => position = value; }
+        internal string Position { get => position; set => position = value; }
 
         /// <summary>
         /// Конструктор для инициализации сотрудника
@@ -39,5 +39,7 @@ namespace Home_Work_11_1
                 $"Отчество: {this.ThirdName}\n" +
                 $"Должность: {this.Position}";
         }
+
+
     }
 }

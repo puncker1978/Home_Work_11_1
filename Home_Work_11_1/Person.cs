@@ -31,17 +31,17 @@ namespace Home_Work_11_1
         /// <summary>
         /// Имя
         /// </summary>
-        protected string FirstName { get => firstName; set => firstName = value; }
+        internal string FirstName { get => firstName; set => firstName = value; }
 
         /// <summary>
         /// Фамилия
         /// </summary>
-        protected string SecondName { get => secondName; set => secondName = value; }
+        internal string SecondName { get => secondName; set => secondName = value; }
 
         /// <summary>
         /// Отчество
         /// </summary>
-        protected string ThirdName { get => thirdName; set => thirdName = value; }
+        internal string ThirdName { get => thirdName; set => thirdName = value; }
         #endregion
 
         #region Конструкторы

@@ -10,13 +10,17 @@ namespace Home_Work_11_1
     {
         static void Main(string[] args)
         {
-            Person client = new Client("Иван", "Петров", "Сергеевич", "+7(925)347-25-14", "5304", "562578");
+            Client client = new Client("Иван", "Петров", "Сергеевич", "+7(925)347-25-14", "5304", "562578");
             Console.WriteLine(client);
             Console.ReadKey();
             Console.Clear();
 
-            Person consultant = new Employee("Дмитрий", "Иванов", "Анатольевич", "Консультант");
+            Employee consultant = new Employee("Дмитрий", "Иванов", "Анатольевич", "Консультант");
             Console.WriteLine(consultant);
+            Console.ReadKey();
+            Console.Clear();
+
+            Console.WriteLine(client.ViewedBy(consultant));
             Console.ReadKey();
             Console.Clear();
         }
