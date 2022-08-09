@@ -89,7 +89,7 @@ namespace Home_Work_11_1
                     $"Имя: {this.FirstName}\n" +
                     $"Отчество: {this.ThirdName}\n" +
                     $"Номер телефона: {this.PhoneNumber}\n";
-            if (employee.Position.Trim().ToLower() == "консультант")
+            if (employee is Consultant)
             {
                 str += $"Серия паспорта: ******\n" +
                     $"Номер паспорта: ****";
