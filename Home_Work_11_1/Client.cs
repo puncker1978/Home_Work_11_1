@@ -75,12 +75,14 @@ namespace Home_Work_11_1
         #region Методы
         public override string ToString()
         {
-             return $"Фамилия: {this.SecondName}\n" +
-                $"Имя: {this.FirstName}\n" +
-                $"Отчество: {this.ThirdName}\n" +
-                $"Номер телефона: {this.PhoneNumber}\n" +
-                $"Серия паспорта: {this.PassportSeries}\n" +
-                $"Номер паспорта: {this.PassportNumber}";
+             return $"================================\n" +
+                $"|Фамилия: {this.SecondName}\n" +
+                $"|Имя: {this.FirstName}\n" +
+                $"|Отчество: {this.ThirdName}\n" +
+                $"|Номер телефона: {this.PhoneNumber}\n" +
+                $"|Серия паспорта: {this.PassportSeries}\n" +
+                $"|Номер паспорта: {this.PassportNumber}\n" +
+                $"================================\n";
         }
 
         internal string ViewedBy(Employee employee)

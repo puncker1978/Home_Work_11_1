@@ -8,14 +8,13 @@ using System.Text;
 
 namespace Home_Work_11_1
 {
-    internal class Consultant : Employee, IClientDataMonitor
+    internal class Manager : Employee, IClientDataMonitor
     {
-        #region Конструктор
-        internal Consultant(string firstName,
+        #region Конструкторы
+        public Manager(string firstName,
             string secondName,
             string thirdName,
-            string position) : base(firstName,
-                secondName, thirdName, position)
+            string position) : base(firstName, secondName, thirdName, position)
         {
         }
         #endregion
@@ -24,24 +23,21 @@ namespace Home_Work_11_1
 
         void IClientDataMonitor.EditClientData(Client oldClientData, Client newClientData)
         {
-            //Консультант может изменить только номер телефона
-            oldClientData.PhoneNumber = newClientData.PhoneNumber;
+            oldClientData = newClientData;
         }
 
         string IClientDataMonitor.ViewClientData(Client client)
         {
             string str = "";
-            str += $"(Консультант) Данные о клиенте:\n" +
+            str += $"Данные о клиенте:\n" +
                 $"Фамилия: {client.SecondName}\n" +
                 $"Имя: {client.FirstName}\n" +
                 $"Отчество: {client.ThirdName}\n" +
                 $"Номер телефона: {client.PhoneNumber}\n" +
-                $"Серия паспорта: ****\n" +
-                $"Номер паспорта: ******";
+                $"Серия паспорта: {client.PassportSeries}\n" +
+                $"Номер паспорта: {client.PassportNumber}";
             return str;
         }
-
-
         #endregion
     }
 }

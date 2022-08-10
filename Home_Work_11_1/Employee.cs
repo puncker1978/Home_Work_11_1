@@ -50,8 +50,6 @@ namespace Home_Work_11_1
                 $"Отчество: {this.ThirdName}\n" +
                 $"Должность: {this.Position}";
         }
-
-        internal abstract void EditClientInformation(Client client, Client newClient);
         #endregion
     }
 }
