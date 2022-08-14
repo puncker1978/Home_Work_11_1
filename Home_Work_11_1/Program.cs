@@ -78,8 +78,8 @@ namespace Home_Work_11_1
                                         Console.WriteLine();
 
                                         ConsultantMenu consultantMenu = new ConsultantMenu();
-
-                                        while (true)
+                                        bool flag = true;
+                                        while (flag)
                                         {
                                             consultantMenu.DrawMenu();
                                             switch (Console.ReadKey(true).Key)
@@ -127,12 +127,16 @@ namespace Home_Work_11_1
                                                                 Console.WriteLine($"Выбран пункт \"Выход\"\nДля выхода ещё раз нажмите Enter");
                                                                 Console.ReadKey();
                                                                 Console.Clear();
+                                                                flag = false;
+
                                                             }
                                                             break;
                                                     }
                                                     break;
                                             }
                                         }
+                                        break;
+
                                     }
 
                                 case 1:     //Менеджер
