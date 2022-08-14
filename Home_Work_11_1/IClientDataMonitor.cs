@@ -8,10 +8,10 @@ using System.Text;
 
 namespace Home_Work_11_1
 {
-    internal interface IClientDataMonitor
+    interface IClientDataMonitor
     {
-        internal string ViewClientData(Client client);
+        string ViewClientData(Client client);
 
-        public void EditClientData(Client oldClientData, Client newClientData);
+        void EditClientData(Client oldClientData, Client newClientData);
     }
 }

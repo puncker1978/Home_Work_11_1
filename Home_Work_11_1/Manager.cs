@@ -21,12 +21,12 @@ namespace Home_Work_11_1
 
         #region Методы
 
-        void IClientDataMonitor.EditClientData(Client oldClientData, Client newClientData)
+        public void EditClientData(Client oldClientData, Client newClientData)
         {
             oldClientData = newClientData;
         }
 
-        string IClientDataMonitor.ViewClientData(Client client)
+        public string ViewClientData(Client client)
         {
             string str = "";
             str += $"Данные о клиенте:\n" +

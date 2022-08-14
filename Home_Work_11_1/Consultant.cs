@@ -22,22 +22,16 @@ namespace Home_Work_11_1
 
         #region Методы
 
-        void IClientDataMonitor.EditClientData(Client oldClientData, Client newClientData)
+        public void EditClientData(Client oldClientData, Client newClientData)
         {
             //Консультант может изменить только номер телефона
             oldClientData.PhoneNumber = newClientData.PhoneNumber;
         }
 
-        string IClientDataMonitor.ViewClientData(Client client)
+        public string ViewClientData(Client client)
         {
-            string str = String.Format("Фамилия:{0,10} | Имя:{1,10} | Отчество: {2,10}")
-            
-            
-            
-            
-            
             string str = "";
-            str += $"(Консультант) Данные о клиенте:\n" +
+            str += $"Данные о клиенте:\n" +
                 $"Фамилия: {client.SecondName}\n" +
                 $"Имя: {client.FirstName}\n" +
                 $"Отчество: {client.ThirdName}\n" +
@@ -45,15 +39,7 @@ namespace Home_Work_11_1
                 $"Серия паспорта: ****\n" +
                 $"Номер паспорта: ******";
             return str;
-            return String.Format("Name:{0,10} |  Level:{1,4} |  HitPoint:{2,6} |  Type:{3,12}",
-                this.Name,
-                this.Level,
-                this.HitPoint,
-                this.GetType().Name
-                );
         }
-
-
         #endregion
     }
 }
