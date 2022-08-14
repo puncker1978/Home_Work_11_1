@@ -44,7 +44,7 @@ namespace Home_Work_11_1
 
             #region Основное меню
             {
-                Console.WriteLine("Меню");
+                Console.WriteLine("Выберите должность");
                 Console.WriteLine();
 
                 ChoosePosition choosePosition = new ChoosePosition();

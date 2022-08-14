@@ -4,17 +4,16 @@ using System.Text;
 
 namespace Home_Work_11_1
 {
-    internal class ChoosePosition : Menu
+    internal class ConsultantMenu : Menu
     {
-        internal ChoosePosition()
+        internal ConsultantMenu()
         {
             base.Row = Console.CursorTop;
             base.Column = Console.CursorLeft;
             base.Index = 0;
-            menuItems = new string[3]
-            {          
-                "Консультант",
-                "Менеджер",
+            menuItems = new string[2]
+            {
+                "Номер телефона",
                 "Выход"
             };
         }
