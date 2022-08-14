@@ -42,7 +42,7 @@ namespace Home_Work_11_1
             //Console.ReadKey();
             //Console.Clear();
 
-            #region Основное меню
+            #region Выбор Должности
             {
                 Console.WriteLine("Выберите должность");
                 Console.WriteLine();
@@ -74,17 +74,66 @@ namespace Home_Work_11_1
                                             "Иванов",
                                             "Анатольевич",
                                             position);
+                                        Console.WriteLine("Выберите действие:");
+                                        Console.WriteLine();
 
-                                        Console.WriteLine($"{employee.SecondName}\t" +
-                                            $"{employee.FirstName}\t" +
-                                            $"{employee.ThirdName}\t" +
-                                            $"({employee.Position})\n");
+                                        ConsultantMenu consultantMenu = new ConsultantMenu();
 
-                                        Console.WriteLine((employee as IClientDataMonitor).ViewClientData(client));
-                                        Console.ReadKey();
-                                        Console.Clear();
+                                        while (true)
+                                        {
+                                            consultantMenu.DrawMenu();
+                                            switch (Console.ReadKey(true).Key)
+                                            {
+                                                case ConsoleKey.DownArrow:
+                                                    if (consultantMenu.Index < consultantMenu.menuItems.Length - 1)
+                                                        consultantMenu.Index++;
+                                                    break;
+
+                                                case ConsoleKey.UpArrow:
+                                                    if (consultantMenu.Index > 0)
+                                                        consultantMenu.Index--;
+                                                    break;
+
+                                                case ConsoleKey.Enter:
+                                                    switch (consultantMenu.Index)
+                                                    {
+                                                        case 0:  //Просмотр информации о клиенте
+                                                            {
+                                                                Console.WriteLine($"{employee.SecondName}\t" +
+                                                                $"{employee.FirstName}\t" +
+                                                                $"{employee.ThirdName}\t" +
+                                                                $"({employee.Position})\n");
+
+                                                                Console.WriteLine((employee as IClientDataMonitor).ViewClientData(client));
+                                                                Console.ReadKey();
+                                                                Console.Clear();
+                                                            }
+                                                            break;
+                                                        case 1:  //Редактирование информации о клиенте
+                                                            {
+                                                                Console.Write("Введите новый номер телефона: ");
+                                                                string phoneNumber = Console.ReadLine();
+                                                                if (phoneNumber != null || phoneNumber != "")
+                                                                {
+                                                                    client.PhoneNumber = phoneNumber;
+                                                                }
+                                                                Console.WriteLine("Номер телефона изменён");
+                                                                Console.ReadKey();
+                                                                Console.Clear();
+                                                            }
+                                                            break;
+                                                        case 2:  //Выход
+                                                            {
+                                                                Console.WriteLine($"Выбран пункт \"Выход\"\nДля выхода ещё раз нажмите Enter");
+                                                                Console.ReadKey();
+                                                                Console.Clear();
+                                                            }
+                                                            break;
+                                                    }
+                                                    break;
+                                            }
+                                        }
                                     }
-                                    break;
 
                                 case 1:     //Менеджер
                                     {   
@@ -111,10 +160,11 @@ namespace Home_Work_11_1
                                     {
                                         Console.WriteLine($"Выбран пункт \"Выход\"\nДля выхода ещё раз нажмите Enter");
                                         Console.ReadKey();
+                                        Console.Clear();
                                     }
-                                    return;
+                                    break;
                             }
-                            break;
+                            return;
                     }
                 }
             }

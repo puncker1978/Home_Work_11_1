@@ -15,9 +15,10 @@ namespace Home_Work_11_1
             base.Row = Console.CursorTop;
             base.Column = Console.CursorLeft;
             base.Index = 0;
-            menuItems = new string[2]
+            menuItems = new string[3]
             {
-                "Номер телефона",
+                "Информация о клиенте",
+                "Новый номер телефона",
                 "Выход"
             };
         }
