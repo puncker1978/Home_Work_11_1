@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Home_Work_11_1
 {
-    class Employee: Person
+    class Employee: Person, IClientDataMonitor
     {
         #region Конструкторы
         /// <summary>
@@ -20,6 +20,8 @@ namespace Home_Work_11_1
         internal Employee(string firstName, string secondName, string thirdName): base(firstName, secondName, thirdName)    
         {
         }
+
+        
         #endregion
 
         #region Методы
@@ -30,6 +32,17 @@ namespace Home_Work_11_1
                 $"Отчество: {this.ThirdName}\n" +
                 $"Должность: {this.Position}";
         }
+
+        public virtual string  ViewClientData(Client client)
+        {
+            throw new NotImplementedException();
+        }
+
+        public virtual void EditClientData(Client oldClientData, Client newClientData)
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion
     }
 }

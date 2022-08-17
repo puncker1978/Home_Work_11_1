@@ -51,7 +51,7 @@ namespace Home_Work_11_1
         /// <summary>
         /// Должность сотрудника: консультант либо менеджер. Либо клиент.
         /// </summary>
-        public string Position { get => position; set => position = value; }
+        internal string Position { get => position; set => position = value; }
 
         #endregion
 

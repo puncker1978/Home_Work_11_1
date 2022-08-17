@@ -10,23 +10,27 @@ namespace Home_Work_11_1
 {
     internal class Manager : Employee, IClientDataMonitor
     {
+        #region Константы
+        internal const string position = "Менеджер";
+        #endregion
+
         #region Конструкторы
         public Manager(string firstName,
             string secondName,
             string thirdName) : base(firstName, secondName, thirdName)
         {
+            this.Position = position;
         }
 
         #endregion
 
         #region Методы
-
-        public void EditClientData(Client oldClientData, Client newClientData)
+        public override void EditClientData(Client oldClientData, Client newClientData)
         {
             oldClientData = newClientData;
         }
 
-        public string ViewClientData(Client client)
+        public override string ViewClientData(Client client)
         {
             string str = "";
             str += $"Данные о клиенте:\n" +

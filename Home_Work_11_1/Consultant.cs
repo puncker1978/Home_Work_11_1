@@ -10,25 +10,30 @@ namespace Home_Work_11_1
 {
     internal class Consultant : Employee, IClientDataMonitor
     {
+        #region Константы
+        internal const string position = "Консультант";
+        #endregion
+
         #region Конструктор
         internal Consultant(string firstName,
             string secondName,
             string thirdName) : base(firstName,
                 secondName, thirdName)
         {
+            this.Position = position;
         }
 
         #endregion
 
         #region Методы
 
-        public void EditClientData(Client oldClientData, Client newClientData)
+        public override void  EditClientData(Client oldClientData, Client newClientData)
         {
             //Консультант может изменить только номер телефона
             oldClientData.PhoneNumber = newClientData.PhoneNumber;
         }
 
-        public string ViewClientData(Client client)
+        public override string ViewClientData(Client client)
         {
             string str = "";
             str += $"Данные о клиенте:\n" +

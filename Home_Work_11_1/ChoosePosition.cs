@@ -32,7 +32,7 @@ namespace Home_Work_11_1
         /// <param name="employee">Сотрудник</param>
         /// <param name="choosePosition">Должность</param>
         /// <returns></returns>
-        internal Employee SetPosition(Employee employee, ChoosePosition choosePosition)
+        internal Object SetPosition(Employee employee, ChoosePosition choosePosition)
         {
             bool flag = true;
             while (flag)
@@ -55,8 +55,13 @@ namespace Home_Work_11_1
                             case 0:     //Консультант
                                 {
                                     Console.Clear();
-
-                                    employee.Position = "Консультант";
+                                    employee = new Consultant(
+                                        employee.FirstName,
+                                        employee.SecondName,
+                                        employee.ThirdName);
+                                    Console.ReadKey();
+                                    Console.Clear();
+                                    Console.WriteLine(employee.GetType());
                                     Console.ReadKey();
                                     Console.Clear();
                                 }
@@ -65,8 +70,13 @@ namespace Home_Work_11_1
                             case 1:     //Менеджер
                                 {
                                     Console.Clear();
-
-                                    employee.Position = "Менеджер";
+                                    employee = new Manager(
+                                        employee.FirstName,
+                                        employee.SecondName,
+                                        employee.ThirdName);
+                                    Console.ReadKey();
+                                    Console.Clear();
+                                    Console.WriteLine(employee.GetType());
                                     Console.ReadKey();
                                     Console.Clear();
                                 }
