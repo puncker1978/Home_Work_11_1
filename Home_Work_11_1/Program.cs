@@ -48,8 +48,9 @@ namespace Home_Work_11_1
                 Console.WriteLine();
 
                 ChoosePosition choosePosition = new ChoosePosition();
+                bool flag = true;
 
-                while (true)
+                while (flag)
                 {
                     choosePosition.DrawMenu();
                     switch (Console.ReadKey(true).Key)
@@ -70,89 +71,21 @@ namespace Home_Work_11_1
                                         Console.Clear();
 
                                         string position = "Консультант";
-                                        Employee employee = new Consultant("Дмитрий",
-                                            "Иванов",
-                                            "Анатольевич",
-                                            position);
-                                        Console.WriteLine("Выберите действие:");
-                                        Console.WriteLine();
+                                        Employee employee = new Consultant("Дмитрий", "Иванов", "Анатольевич", position);
 
-                                        ConsultantMenu consultantMenu = new ConsultantMenu();
-                                        bool flag = true;
-                                        while (flag)
-                                        {
-                                            consultantMenu.DrawMenu();
-                                            switch (Console.ReadKey(true).Key)
-                                            {
-                                                case ConsoleKey.DownArrow:
-                                                    if (consultantMenu.Index < consultantMenu.menuItems.Length - 1)
-                                                        consultantMenu.Index++;
-                                                    break;
+                                        Console.WriteLine((employee as IClientDataMonitor).ViewClientData(client));
 
-                                                case ConsoleKey.UpArrow:
-                                                    if (consultantMenu.Index > 0)
-                                                        consultantMenu.Index--;
-                                                    break;
-
-                                                case ConsoleKey.Enter:
-                                                    switch (consultantMenu.Index)
-                                                    {
-                                                        case 0:  //Просмотр информации о клиенте
-                                                            {
-                                                                Console.WriteLine($"{employee.SecondName}\t" +
-                                                                $"{employee.FirstName}\t" +
-                                                                $"{employee.ThirdName}\t" +
-                                                                $"({employee.Position})\n");
-
-                                                                Console.WriteLine((employee as IClientDataMonitor).ViewClientData(client));
-                                                                Console.ReadKey();
-                                                                Console.Clear();
-                                                            }
-                                                            break;
-                                                        case 1:  //Редактирование информации о клиенте
-                                                            {
-                                                                Console.Write("Введите новый номер телефона: ");
-                                                                string phoneNumber = Console.ReadLine();
-                                                                if (phoneNumber != null || phoneNumber != "")
-                                                                {
-                                                                    client.PhoneNumber = phoneNumber;
-                                                                }
-                                                                Console.WriteLine("Номер телефона изменён");
-                                                                Console.ReadKey();
-                                                                Console.Clear();
-                                                            }
-                                                            break;
-                                                        case 2:  //Выход
-                                                            {
-                                                                Console.WriteLine($"Выбран пункт \"Выход\"\nДля выхода ещё раз нажмите Enter");
-                                                                Console.ReadKey();
-                                                                Console.Clear();
-                                                                flag = false;
-
-                                                            }
-                                                            break;
-                                                    }
-                                                    break;
-                                            }
-                                        }
-                                        break;
-
+                                        Console.ReadKey();
+                                        Console.Clear();
                                     }
+                                    break;
 
                                 case 1:     //Менеджер
                                     {   
                                         Console.Clear();
 
                                         string position = "Менеджер";
-                                        Employee employee = new Manager("Сергей",
-                                            "Сидоров",
-                                            "Игоревич",
-                                            position);
-
-                                        Console.WriteLine($"{employee.SecondName}\t" +
-                                            $"{employee.FirstName}\t" +
-                                            $"{employee.ThirdName}\t" +
-                                            $"({employee.Position})\n");
+                                        Employee employee = new Manager("Сергей", "Сидоров", "Игоревич", position);
 
                                         Console.WriteLine((employee as IClientDataMonitor).ViewClientData(client));
 
@@ -165,10 +98,11 @@ namespace Home_Work_11_1
                                         Console.WriteLine($"Выбран пункт \"Выход\"\nДля выхода ещё раз нажмите Enter");
                                         Console.ReadKey();
                                         Console.Clear();
+                                        flag = false;
                                     }
                                     break;
                             }
-                            return;
+                            break;
                     }
                 }
             }
