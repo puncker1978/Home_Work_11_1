@@ -13,10 +13,14 @@ namespace Home_Work_11_1
         #region Конструкторы
         public Manager(string firstName,
             string secondName,
-            string thirdName,
-            string position) : base(firstName, secondName, thirdName, position)
+            string thirdName) : base(firstName, secondName, thirdName)
         {
         }
+
+        public Manager(string position) : base(position)
+        {
+        }
+
         #endregion
 
         #region Методы

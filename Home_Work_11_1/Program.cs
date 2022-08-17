@@ -14,17 +14,9 @@ namespace Home_Work_11_1
         {
             Client client = new Client("Иван", "Петров", "Сергеевич", "+7(925)111-11-11", "5304", "562578");
 
-            Client client1 = new Client("Александр", "Петров", "Сергеевич", "+7(925)111-11-12", "5304", "562578");
+            Employee employee = new Employee("Сергей", "Иванов", "Анатольевич");
 
-            Client client2 = new Client("Александр", "Петров", "Сергеевич", "+7(925)111-11-13", "5304", "562578");
-            
-            //Console.WriteLine(client);
-            //Console.WriteLine(client1);
-            //Console.WriteLine(client2);
-            //Console.ReadKey();
-            //Console.Clear();
-
-
+            #region Черновики
             //IClientDataMonitor employee1 = new Consultant("Дмитрий", "Иванов", "Анатольевич", "Консультант");
             //employee1.EditClientData(client, client1);
             //Console.ReadKey();
@@ -41,6 +33,7 @@ namespace Home_Work_11_1
             //((IClientDataMonitor)employee2).EditClientData(client, client1);
             //Console.ReadKey();
             //Console.Clear();
+            #endregion
 
             #region Выбор Должности
             {
@@ -48,65 +41,12 @@ namespace Home_Work_11_1
                 Console.WriteLine();
 
                 ChoosePosition choosePosition = new ChoosePosition();
-                bool flag = true;
+                _ = choosePosition.SetPosition(employee, choosePosition);
 
-                while (flag)
-                {
-                    choosePosition.DrawMenu();
-                    switch (Console.ReadKey(true).Key)
-                    {
-                        case ConsoleKey.DownArrow:
-                            if (choosePosition.Index < choosePosition.menuItems.Length - 1)
-                                choosePosition.Index++;
-                            break;
-                        case ConsoleKey.UpArrow:
-                            if (choosePosition.Index > 0)
-                                choosePosition.Index--;
-                            break;
-                        case ConsoleKey.Enter:
-                            switch (choosePosition.Index)
-                            {
-                                case 0:     //Консультант
-                                    {   
-                                        Console.Clear();
-
-                                        string position = "Консультант";
-                                        Employee employee = new Consultant("Дмитрий", "Иванов", "Анатольевич", position);
-
-                                        Console.WriteLine((employee as IClientDataMonitor).ViewClientData(client));
-
-                                        Console.ReadKey();
-                                        Console.Clear();
-                                    }
-                                    break;
-
-                                case 1:     //Менеджер
-                                    {   
-                                        Console.Clear();
-
-                                        string position = "Менеджер";
-                                        Employee employee = new Manager("Сергей", "Сидоров", "Игоревич", position);
-
-                                        Console.WriteLine((employee as IClientDataMonitor).ViewClientData(client));
-
-                                        Console.ReadKey();
-                                        Console.Clear();
-                                    }
-                                    break;
-                                case 2:     //Выход
-                                    {
-                                        Console.WriteLine($"Выбран пункт \"Выход\"\nДля выхода ещё раз нажмите Enter");
-                                        Console.ReadKey();
-                                        Console.Clear();
-                                        flag = false;
-                                    }
-                                    break;
-                            }
-                            break;
-                    }
-                }
             }
             #endregion
+
+            //Console.WriteLine(employee);
 
 
         }

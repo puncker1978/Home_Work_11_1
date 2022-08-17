@@ -25,6 +25,11 @@ namespace Home_Work_11_1
         /// Отчество
         /// </summary>
         private string thirdName;
+
+        /// <summary>
+        /// Должность сотрудника: консультант либо менеджер. Либо клиент.
+        /// </summary>
+        private string position;
         #endregion
 
         #region Свойства
@@ -42,6 +47,12 @@ namespace Home_Work_11_1
         /// Отчество
         /// </summary>
         internal string ThirdName { get => thirdName; set => thirdName = value; }
+
+        /// <summary>
+        /// Должность сотрудника: консультант либо менеджер. Либо клиент.
+        /// </summary>
+        public string Position { get => position; set => position = value; }
+
         #endregion
 
         #region Конструкторы
@@ -56,6 +67,11 @@ namespace Home_Work_11_1
             this.FirstName = firstName;
             this.SecondName = secondName;
             this.ThirdName = thirdName;
+        }
+
+        protected Person(string position)
+        {
+            this.Position = position;
         }
 
         #endregion

@@ -66,6 +66,7 @@ namespace Home_Work_11_1
             string passportSeries,
             string passportNumber) : base(firstName, secondName, thirdName)
         {
+            Position = "Клиент";
             PhoneNumber = phoneNumber;
             PassportSeries = passportSeries;
             PassportNumber = passportNumber;
