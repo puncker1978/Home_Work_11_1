@@ -20,17 +20,6 @@ namespace Home_Work_11_1
         internal Employee(string firstName, string secondName, string thirdName): base(firstName, secondName, thirdName)    
         {
         }
-
-        /// <summary>
-        /// Конструктор для инициализации сотрудника
-        /// </summary>
-        /// <param name="firstName">Имя</param>
-        /// <param name="secondName">Фамилия</param>
-        /// <param name="thirdName">Отчество</param>
-        /// <param name="position">Должность</param>
-        protected Employee(string position): base(position)
-        {
-        }
         #endregion
 
         #region Методы

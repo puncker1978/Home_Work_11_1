@@ -56,9 +56,7 @@ namespace Home_Work_11_1
                                 {
                                     Console.Clear();
 
-                                    string position = "Консультант";
-                                    employee.Position = position;
-
+                                    employee.Position = "Консультант";
                                     Console.ReadKey();
                                     Console.Clear();
                                 }
@@ -68,16 +66,15 @@ namespace Home_Work_11_1
                                 {
                                     Console.Clear();
 
-                                    string position = "Менеджер";
-                                    employee.Position = position;
-
+                                    employee.Position = "Менеджер";
                                     Console.ReadKey();
                                     Console.Clear();
                                 }
                                 break;
                             case 2:     //Выход
                                 {
-                                    Console.WriteLine($"Выбран пункт \"Выход\"\nДля выхода ещё раз нажмите Enter");
+                                    Console.WriteLine($"Выбран пункт \"Выход\"\n" +
+                                        $"Для выхода ещё раз нажмите Enter");
                                     Console.ReadKey();
                                     Console.Clear();
                                     flag = false;

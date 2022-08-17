@@ -42,11 +42,12 @@ namespace Home_Work_11_1
 
                 ChoosePosition choosePosition = new ChoosePosition();
                 _ = choosePosition.SetPosition(employee, choosePosition);
-
             }
             #endregion
 
-            //Console.WriteLine(employee);
+            
+            
+            Console.ReadKey();
 
 
         }

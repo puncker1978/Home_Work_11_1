@@ -18,10 +18,6 @@ namespace Home_Work_11_1
         {
         }
 
-        internal Consultant(string position) : base(position)
-        {
-        }
-
         #endregion
 
         #region Методы

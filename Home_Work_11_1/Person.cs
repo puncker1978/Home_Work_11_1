@@ -68,12 +68,6 @@ namespace Home_Work_11_1
             this.SecondName = secondName;
             this.ThirdName = thirdName;
         }
-
-        protected Person(string position)
-        {
-            this.Position = position;
-        }
-
         #endregion
 
         #region Методы

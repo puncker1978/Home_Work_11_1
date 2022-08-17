@@ -17,10 +17,6 @@ namespace Home_Work_11_1
         {
         }
 
-        public Manager(string position) : base(position)
-        {
-        }
-
         #endregion
 
         #region Методы

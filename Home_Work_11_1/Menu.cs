@@ -23,10 +23,11 @@ namespace Home_Work_11_1
         private int index;
         #endregion
 
-
+        #region Свойства
         internal int Row { get => row; set => row = value; }
         internal int Column { get => column; set => column = value; }
         internal int Index { get => index; set => index = value; }
+        #endregion
 
         /// <summary>
         /// Пункты меню
