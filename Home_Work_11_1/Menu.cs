@@ -27,13 +27,16 @@ namespace Home_Work_11_1
         internal int Index { get => index; set => index = value; }
         #endregion
 
+        #region Пункты меню
         /// <summary>
         /// Пункты меню
         /// Для должности(консультант либо менеджер)
         /// Для сотрудников - выбор поля для редактирования
         /// </summary>
         internal string[] menuItems;
-      
+        #endregion
+
+        #region Методы
         /// <summary>
         /// Метод отрисовки меню
         /// </summary>
@@ -52,5 +55,6 @@ namespace Home_Work_11_1
             }
             Console.WriteLine();
         }
+        #endregion
     }
 }

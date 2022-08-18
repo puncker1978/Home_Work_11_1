@@ -13,9 +13,9 @@ namespace Home_Work_11_1
         /// </summary>
         internal ChoosePosition()
         {
-            base.Row = Console.CursorTop;
-            base.Column = Console.CursorLeft;
-            base.Index = 0;
+            Row = Console.CursorTop;
+            Column = Console.CursorLeft;
+            Index = 0;
             menuItems = new string[3]
             {
                 "Консультант",
@@ -29,30 +29,33 @@ namespace Home_Work_11_1
         /// </summary>
         /// <param name="choosePosition">Должность, выбранная в меню</param>
         /// <returns>Соответствующий класс</returns>
-        internal Employee SetPosition(ChoosePosition choosePosition)
+        internal Employee SetPosition()
         {
             Employee employee = null;
             bool flag = true;
             while (flag)
             {
-                choosePosition.DrawMenu();
+                DrawMenu();
 
                 switch (Console.ReadKey(true).Key)
                 {
                     case ConsoleKey.DownArrow:
-                        if (choosePosition.Index < choosePosition.menuItems.Length - 1)
-                            choosePosition.Index++;
+                        if (Index < menuItems.Length - 1)
+                            Index++;
                         break;
                     case ConsoleKey.UpArrow:
-                        if (choosePosition.Index > 0)
-                            choosePosition.Index--;
+                        if (Index > 0)
+                            Index--;
                         break;
                     case ConsoleKey.Enter:
-                        switch (choosePosition.Index)
+                        switch (Index)
                         {
                             case 0:     //Консультант
                                 {
                                     employee = new Consultant("Иван", "Николаев", "Федорович");
+                                    ConsultantMenu consultantMenu = new ConsultantMenu();
+                                    Console.Clear();
+                                    consultantMenu.DoAction();
                                 }
                                 break;
 

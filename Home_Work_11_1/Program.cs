@@ -38,13 +38,12 @@ namespace Home_Work_11_1
             Console.WriteLine("Выберите должность");
             Console.WriteLine();
 
-            ChoosePosition choosePosition = new ChoosePosition();
-            Employee employee = choosePosition.SetPosition(choosePosition);
+            ChoosePosition choosePosition = new ChoosePosition(Console.CursorTop);
+            Employee employee = choosePosition.SetPosition();
 
             #endregion
 
-
-
+            
             Console.ReadKey();
         }
     }

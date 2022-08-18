@@ -12,15 +12,61 @@ namespace Home_Work_11_1
     {
         internal ConsultantMenu()
         {
-            base.Row = Console.CursorTop;
-            base.Column = Console.CursorLeft;
-            base.Index = 0;
+            Row = Console.CursorTop;
+            Column = Console.CursorLeft;
+            Index = 0;
             menuItems = new string[3]
             {
                 "Информация о клиенте",
                 "Новый номер телефона",
                 "Выход"
             };
+        }
+
+        internal void DoAction()
+        {
+            bool flag = true;
+            while (flag)
+            {
+                DrawMenu();
+
+                switch (Console.ReadKey(true).Key)
+                {
+                    case ConsoleKey.DownArrow:
+                        if (Index < menuItems.Length - 1)
+                            Index++;
+                        break;
+                    case ConsoleKey.UpArrow:
+                        if (Index > 0)
+                            Index--;
+                        break;
+                    case ConsoleKey.Enter:
+                        switch (Index)
+                        {
+                            case 0:     
+                                {
+                                    Console.WriteLine(menuItems[0]);
+                                }
+                                break;
+
+                            case 1:    
+                                {
+                                    Console.WriteLine(menuItems[1]);
+                                }
+                                break;
+                            case 2:     //Выход
+                                {
+                                    Console.WriteLine($"Выбран пункт {menuItems[2]}\n" +
+                                        $"Для выхода ещё раз нажмите Enter");
+                                    Console.ReadKey();
+                                    Console.Clear();
+                                    flag = false;
+                                }
+                                break;
+                        }
+                        break;
+                }
+            }
         }
     }
 }
