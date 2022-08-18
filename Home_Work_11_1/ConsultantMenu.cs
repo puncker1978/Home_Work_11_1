@@ -23,7 +23,7 @@ namespace Home_Work_11_1
             };
         }
 
-        internal override void  DoAction(Client client)
+        internal override void  DoAction(Client client, Employee employee)
         {
             bool flag = true;
             while (flag)
@@ -45,7 +45,7 @@ namespace Home_Work_11_1
                         {
                             case 0:     
                                 {
-                                    Console.WriteLine(menuItems[0]);
+                                    Console.WriteLine(client);
                                     Console.ReadKey();
                                     Console.Clear();
                                 }

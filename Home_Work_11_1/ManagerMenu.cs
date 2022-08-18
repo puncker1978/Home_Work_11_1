@@ -27,7 +27,7 @@ namespace Home_Work_11_1
             };
         }
 
-        internal override void DoAction(Client client)
+        internal override void DoAction(Client client, Employee employee)
         {
             bool flag = true;
             while (flag)
