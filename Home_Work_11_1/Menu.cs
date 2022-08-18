@@ -56,7 +56,7 @@ namespace Home_Work_11_1
             Console.WriteLine();
         }
 
-        internal abstract void DoAction(Client client, Employee employee)
+        internal virtual void DoAction(Client client, Employee employee)
         {
         }
         #endregion
