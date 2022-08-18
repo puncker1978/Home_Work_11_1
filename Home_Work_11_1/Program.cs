@@ -12,7 +12,7 @@ namespace Home_Work_11_1
     {
         static void Main(string[] args)
         {
-            Person client = new Client("Иван", "Петров", "Сергеевич", "+7(925)111-11-11", "5304", "562578");
+            Client client = new Client("Иван", "Петров", "Сергеевич", "+7(925)111-11-11", "5304", "562578");
 
             #region Черновики
             //IClientDataMonitor employee1 = new Consultant("Дмитрий", "Иванов", "Анатольевич", "Консультант");
@@ -38,13 +38,33 @@ namespace Home_Work_11_1
             Console.WriteLine("Выберите должность");
             Console.WriteLine();
 
-            ChoosePosition choosePosition = new ChoosePosition(Console.CursorTop);
+            ChoosePosition choosePosition = new ChoosePosition();
             Employee employee = choosePosition.SetPosition();
 
-            #endregion
+            if (employee != null)
+            {
+                Console.WriteLine($"Выбрана должность: {employee.Position}\n" +
+                    $"Для продолжения нажмите Enter");
+                Console.ReadKey();
+                Console.Clear();
+            };
 
-            
-            Console.ReadKey();
+            if (employee.GetType() == typeof(Consultant))
+            {
+                Menu menu = new ConsultantMenu();
+                menu.DoAction(client);
+            }
+
+            if (employee.GetType() == typeof(Manager))
+            {
+                Menu menu = new ManagerMenu();
+                menu.DoAction(client);
+            }
+
+
+
+
+            #endregion
         }
     }
 }

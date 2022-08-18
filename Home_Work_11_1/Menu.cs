@@ -55,6 +55,11 @@ namespace Home_Work_11_1
             }
             Console.WriteLine();
         }
+
+        internal virtual void DoAction(Client client)
+        {
+
+        }
         #endregion
     }
 }

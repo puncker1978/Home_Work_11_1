@@ -16,11 +16,10 @@ namespace Home_Work_11_1
             Row = Console.CursorTop;
             Column = Console.CursorLeft;
             Index = 0;
-            menuItems = new string[3]
+            menuItems = new string[2]
             {
                 "Консультант",
-                "Менеджер",
-                "Выход"
+                "Менеджер"
             };
         }
 
@@ -53,23 +52,13 @@ namespace Home_Work_11_1
                             case 0:     //Консультант
                                 {
                                     employee = new Consultant("Иван", "Николаев", "Федорович");
-                                    ConsultantMenu consultantMenu = new ConsultantMenu();
-                                    Console.Clear();
-                                    consultantMenu.DoAction();
+                                    flag = false;
                                 }
                                 break;
 
                             case 1:     //Менеджер
                                 {
                                     employee = new Manager("Пётр", "Ильин", "Сергеевич");
-                                }
-                                break;
-                            case 2:     //Выход
-                                {
-                                    Console.WriteLine($"Выбран пункт \"Выход\"\n" +
-                                        $"Для выхода ещё раз нажмите Enter");
-                                    Console.ReadKey();
-                                    Console.Clear();
                                     flag = false;
                                 }
                                 break;

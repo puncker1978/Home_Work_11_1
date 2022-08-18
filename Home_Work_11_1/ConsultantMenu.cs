@@ -23,7 +23,7 @@ namespace Home_Work_11_1
             };
         }
 
-        internal void DoAction()
+        internal override void  DoAction(Client client)
         {
             bool flag = true;
             while (flag)
@@ -46,12 +46,16 @@ namespace Home_Work_11_1
                             case 0:     
                                 {
                                     Console.WriteLine(menuItems[0]);
+                                    Console.ReadKey();
+                                    Console.Clear();
                                 }
                                 break;
 
                             case 1:    
                                 {
                                     Console.WriteLine(menuItems[1]);
+                                    Console.ReadKey();
+                                    Console.Clear();
                                 }
                                 break;
                             case 2:     //Выход
