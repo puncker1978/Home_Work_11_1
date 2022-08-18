@@ -52,13 +52,13 @@ namespace Home_Work_11_1
             if (employee.GetType() == typeof(Consultant))
             {
                 Menu menu = new ConsultantMenu();
-                menu.DoAction(client);
+                menu.DoAction(client, employee);
             }
 
             if (employee.GetType() == typeof(Manager))
             {
                 Menu menu = new ManagerMenu();
-                menu.DoAction(client);
+                menu.DoAction(client, employee);
             }
 
 

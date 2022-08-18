@@ -15,8 +15,9 @@ namespace Home_Work_11_1
             base.Row = Console.CursorTop;
             base.Column = Console.CursorLeft;
             base.Index = 0;
-            menuItems = new string[7]
+            menuItems = new string[8]
             {
+                "Информация о клиенте",
                 "Фамилия",
                 "Имя",
                 "Отчество",
@@ -49,7 +50,9 @@ namespace Home_Work_11_1
                         {
                             case 0:
                                 {
-                                    Console.WriteLine(menuItems[0]);
+                                    Console.WriteLine(employee.ViewClientData(client));
+                                    Console.ReadKey();
+                                    Console.Clear();
                                 }
                                 break;
 
@@ -83,7 +86,13 @@ namespace Home_Work_11_1
                                 }
                                 break;
 
-                            case 6:     //Выход
+                            case 6:
+                                {
+                                    Console.WriteLine(menuItems[5]);
+                                }
+                                break;
+
+                            case 7:     //Выход
                                 {
                                     Console.WriteLine($"Выбран пункт {menuItems[6]}\n" +
                                         $"Для выхода ещё раз нажмите Enter");

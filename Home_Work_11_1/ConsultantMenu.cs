@@ -45,7 +45,7 @@ namespace Home_Work_11_1
                         {
                             case 0:     
                                 {
-                                    Console.WriteLine(client);
+                                    Console.WriteLine(employee.ViewClientData(client));
                                     Console.ReadKey();
                                     Console.Clear();
                                 }
