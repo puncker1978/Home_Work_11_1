@@ -2,10 +2,6 @@
 
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: https://pvs-studio.com
 
-using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace Home_Work_11_1
 {
     /// <summary>

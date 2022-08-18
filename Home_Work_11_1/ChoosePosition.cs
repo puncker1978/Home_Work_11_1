@@ -3,8 +3,6 @@
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: https://pvs-studio.com
 
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Home_Work_11_1
 {
@@ -27,13 +25,13 @@ namespace Home_Work_11_1
         }
 
         /// <summary>
-        /// Метод устанавливает для данного сотрудника его должность
+        /// Метод устанавливает класс, соответствующий выбранной в меню должности.
         /// </summary>
-        /// <param name="employee">Сотрудник</param>
-        /// <param name="choosePosition">Должность</param>
-        /// <returns></returns>
-        internal Object SetPosition(Employee employee, ChoosePosition choosePosition)
+        /// <param name="choosePosition">Должность, выбранная в меню</param>
+        /// <returns>Соответствующий класс</returns>
+        internal Employee SetPosition(ChoosePosition choosePosition)
         {
+            Employee employee = null;
             bool flag = true;
             while (flag)
             {
@@ -54,31 +52,13 @@ namespace Home_Work_11_1
                         {
                             case 0:     //Консультант
                                 {
-                                    Console.Clear();
-                                    employee = new Consultant(
-                                        employee.FirstName,
-                                        employee.SecondName,
-                                        employee.ThirdName);
-                                    Console.ReadKey();
-                                    Console.Clear();
-                                    Console.WriteLine(employee.GetType());
-                                    Console.ReadKey();
-                                    Console.Clear();
+                                    employee = new Consultant("Иван", "Николаев", "Федорович");
                                 }
                                 break;
 
                             case 1:     //Менеджер
                                 {
-                                    Console.Clear();
-                                    employee = new Manager(
-                                        employee.FirstName,
-                                        employee.SecondName,
-                                        employee.ThirdName);
-                                    Console.ReadKey();
-                                    Console.Clear();
-                                    Console.WriteLine(employee.GetType());
-                                    Console.ReadKey();
-                                    Console.Clear();
+                                    employee = new Manager("Пётр", "Ильин", "Сергеевич");
                                 }
                                 break;
                             case 2:     //Выход

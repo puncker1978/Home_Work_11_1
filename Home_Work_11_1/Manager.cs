@@ -2,13 +2,9 @@
 
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: https://pvs-studio.com
 
-using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace Home_Work_11_1
 {
-    internal class Manager : Employee, IClientDataMonitor
+    internal class Manager : Employee
     {
         #region Константы
         internal const string position = "Менеджер";

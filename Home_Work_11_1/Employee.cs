@@ -3,12 +3,10 @@
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: https://pvs-studio.com
 
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Home_Work_11_1
 {
-    class Employee: Person, IClientDataMonitor
+    abstract class Employee: Person, IClientDataMonitor
     {
         #region Конструкторы
         /// <summary>

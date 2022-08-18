@@ -14,15 +14,6 @@ namespace Home_Work_11_1
         {
             Person client = new Client("Иван", "Петров", "Сергеевич", "+7(925)111-11-11", "5304", "562578");
 
-            Employee employee = new Employee("Сергей", "Иванов", "Ильич");
-
-            employee = new Consultant(
-                employee.FirstName,
-                employee.SecondName,
-                employee.ThirdName);
-
-
-
             #region Черновики
             //IClientDataMonitor employee1 = new Consultant("Дмитрий", "Иванов", "Анатольевич", "Консультант");
             //employee1.EditClientData(client, client1);
@@ -43,18 +34,17 @@ namespace Home_Work_11_1
             #endregion
 
             #region Выбор Должности
-            {
-                Console.WriteLine("Выберите должность");
-                Console.WriteLine();
 
-                ChoosePosition choosePosition = new ChoosePosition();
-                _ = choosePosition.SetPosition(employee, choosePosition);
-            }
+            Console.WriteLine("Выберите должность");
+            Console.WriteLine();
+
+            ChoosePosition choosePosition = new ChoosePosition();
+            Employee employee = choosePosition.SetPosition(choosePosition);
+
             #endregion
 
-            var t = employee.GetType();//Почему t - консультант?
-           
-            Console.WriteLine(employee.ViewClientData(client as Client));
+
+
             Console.ReadKey();
         }
     }
