@@ -53,7 +53,11 @@ namespace Home_Work_11_1
 
                             case 1:    
                                 {
-                                    Console.WriteLine(menuItems[1]);
+                                    Console.Write($"{menuItems[1]}\n" +
+                                         $"Новвый номер телефона: ");
+                                    string newPhoneNumber = Console.ReadLine();
+                                    client.PhoneNumber = newPhoneNumber;
+                                    Console.WriteLine("Данные успешно изменены");
                                     Console.ReadKey();
                                     Console.Clear();
                                 }

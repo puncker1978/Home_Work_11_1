@@ -58,37 +58,75 @@ namespace Home_Work_11_1
 
                             case 1:
                                 {
-                                    Console.WriteLine(menuItems[1]);
+                                    Console.Write($"{menuItems[1]}\n" +
+                                        $"Новая фамилия: ");
+                                    string newSecondName = Console.ReadLine();
+                                    client.SecondName = newSecondName;
+                                    Console.WriteLine("Данные успешно изменены");
+                                    Console.ReadKey();
+                                    Console.Clear();
+
                                 }
                                 break;
 
                             case 2:
                                 {
-                                    Console.WriteLine(menuItems[2]);
+                                    Console.Write($"{menuItems[2]}\n" +
+                                        $"Новое имя: ");
+                                    string newFirstdName = Console.ReadLine();
+                                    client.FirstName = newFirstdName;
+                                    Console.WriteLine("Данные успешно изменены");
+                                    Console.ReadKey();
+                                    Console.Clear();
                                 }
                                 break;
 
                             case 3:
                                 {
-                                    Console.WriteLine(menuItems[3]);
+                                    Console.Write($"{menuItems[3]}\n" +
+                                        $"Новое отчество: ");
+                                    string newThirdName = Console.ReadLine();
+                                    client.ThirdName = newThirdName;
+                                    Console.WriteLine("Данные успешно изменены");
+                                    Console.ReadKey();
+                                    Console.Clear();
                                 }
                                 break;
 
                             case 4:
                                 {
-                                    Console.WriteLine(menuItems[4]);
+                                    Console.Write($"{menuItems[4]}\n" +
+                                        $"Носвая фамилия: ");
+                                    string newPhoneNumber = Console.ReadLine();
+                                    client.PhoneNumber = newPhoneNumber;
+                                    Console.WriteLine("Данные успешно изменены");
+                                    Console.ReadKey();
+                                    Console.Clear();
                                 }
                                 break;
 
                             case 5:
                                 {
-                                    Console.WriteLine(menuItems[5]);
+                                    Console.Write($"{menuItems[5]}\n" +
+                                        $"Новая серия паспорта: ");
+                                    string newPassportSeries = Console.ReadLine();
+                                    client.PassportSeries = newPassportSeries;
+                                    ;
+                                    Console.WriteLine("Данные успешно изменены");
+                                    Console.ReadKey();
+                                    Console.Clear();
                                 }
                                 break;
 
                             case 6:
                                 {
-                                    Console.WriteLine(menuItems[5]);
+                                    Console.Write($"{menuItems[6]}\n" +
+                                        $"Новый номер паспорта: ");
+                                    string newPassportNumber = Console.ReadLine();
+                                    client.PassportNumber = newPassportNumber;
+                                    Console.WriteLine("Данные успешно изменены");
+                                    Console.ReadKey();
+                                    Console.Clear();
                                 }
                                 break;
 
